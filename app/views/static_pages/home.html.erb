@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Catan</title>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <!-- 	Resources Distribution:
+
+			Blue: 6=wood, 5=wood, 5=wood, 4=grain, 8=brick
+			White: 6=wood, 9=grain, 8=ore, 4=wool, 10=wool
+			Red: 8=ore, 10=brick, 11=wood, 6=grain, 3=grain, 5=ore
+			Orange: 8=brick, 3=wood, 9=wool, 11=ore, 10=brick, 6=grain  -->
+
+	<body>
+
+		<div="headline" align="center">
+			<h1>Welcome to Settlers of Catan</h1>
+			<br>
+			<h2>Throw the dice!</h2>
+		</div>
+
+		<br>
+		<br>
+
+		<div="container">
+			<div class="row">
+				<div class="col-md-4" align="right">
+					<button type="button" class="btn btn-success">throw</button>
+				</div>
+				<div class="col-md-4">
+					<% number = 2+rand(6)+rand(6) %>
+					<%= number %>
+				</div>
+				<div class="col-md-4" align="left">
+					<% if number == 3 %>
+						Blue: nil <br>
+						White: nil <br>
+						Red: Grain <br>
+						Orange: Wood <br>
+					<% elsif number == 4 %>
+						Blue: Grain <br>
+						White: Wool <br>
+						Red: nil <br>
+						Orange: nil <br>
+					<% elsif number == 5 %>
+						Blue: Wood x2 <br>
+						White: nil <br>
+						Red: Ore <br>
+						Orange: nil <br>
+					<% elsif number == 6 %>
+						Blue: Wood <br>
+						White: Wood <br>
+						Red: Grain <br>
+						Orange: Grain <br>
+					<% elsif number == 8 %>
+						Blue: Brick <br>
+						White: Ore <br>
+						Red: Ore <br>
+						Orange: Brick <br>
+					<% elsif number == 9 %>
+						Blue: nil <br>
+						White: Grain <br>
+						Red: nil <br>
+						Orange: Wool <br>
+					<% elsif number == 10 %>
+						Blue: nil <br>
+						White: Wool <br>
+						Red: Brick <br>
+						Orange: Brick <br>
+					<% elsif number == 11 %>
+						Blue: nil <br>
+						White: nil <br>
+						Red: Wood <br>
+						Orange: Ore <br>
+					<% else %>
+						No resources - sorry!
+					<% end %>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>
